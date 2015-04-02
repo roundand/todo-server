@@ -1,0 +1,29 @@
+{
+  "name": "nowdoit-dummy-server",
+  "main": "appjs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Node.js dummy server on Ubuntu using Docker",
+  "author": "Francis Norton <francis.norton@gmail.com>",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "cookie-parser": "^1.3.4",
+    "debug": "^2.1.3",
+    "express": "4.x.x",
+    "mongoose": "^3.8.25",
+    "morgan": "^1.5.2"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "expect.js": "^0.3.1",
+    "jshint": "latest",
+    "mocha": "latest",
+    "superagent": "^0.21.0"
+  },
+  "scripts": {
+    "env": "env",
+    "lint": "jshint **.js",
+    "start": "node app.js",
+    "test": "mocha test/"
+  }
+}
