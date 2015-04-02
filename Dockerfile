@@ -17,4 +17,5 @@ EXPOSE 8000
 # Set the default command to execute
 # when creating a new container
 WORKDIR /usr/src/app
+RUN npm install
 CMD node app.js
