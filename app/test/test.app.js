@@ -12,7 +12,7 @@ describe('todo endpoint', function() {
   var entry = {name: 'Another thing', done: false, note: 'well'};
 
   it('should post an entry', function(done){
-    superagent.post('localhost/todo')
+    superagent.post('localhost:8000/todo')
     .send(entry)
     .end(function(error, res){
       expect(error).to.be(null);
@@ -28,7 +28,7 @@ describe('todo endpoint', function() {
   });
 
   it('should retrieve the entry', function(done){
-    superagent.get('localhost/todo/' + id)
+    superagent.get('localhost:8000/todo/' + id)
     .end(function(error, res){
       expect(error).to.be(null);
       expect(res.status).to.equal(200);
@@ -43,7 +43,7 @@ describe('todo endpoint', function() {
 
   // expect an array containing the item in response to GET all
   it('should receive a response', function(done){
-    superagent.get('localhost/todo').end(function(error, res){
+    superagent.get('localhost:8000/todo').end(function(error, res){
       expect(error).to.be(null);
       expect(res.status).to.be(200);
 
@@ -58,7 +58,7 @@ describe('todo endpoint', function() {
 
   entry.name = 'updated thing';
   it('should update an entry', function(done){
-    superagent.put('localhost/todo/' + id)
+    superagent.put('localhost:8000/todo/' + id)
     .send(entry)
     .end(function(error, res){
       expect(error).to.be(null);
@@ -73,7 +73,7 @@ describe('todo endpoint', function() {
   });
 
   it('should delete the entry', function(done){
-    superagent.del('localhost/todo/' + id)
+    superagent.del('localhost:8000/todo/' + id)
     .end(function(error, res){
       expect(error).to.be(null);
       expect(res.status).to.be(200);
@@ -85,7 +85,7 @@ describe('todo endpoint', function() {
   });
 
   it('should not retrieve the deleted entry', function(done){
-    superagent.get('localhost/todo/' + id)
+    superagent.get('localhost:8000/todo/' + id)
     .end(function(error, res){
       expect(error).to.be(null);
       expect(res.status).to.be(200);
