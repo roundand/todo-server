@@ -13,6 +13,7 @@ ADD app /usr/src/app
 
 # Expose ports
 EXPOSE 8000
+EXPOSE 8800
 
 # Set the default command to execute
 # when creating a new container

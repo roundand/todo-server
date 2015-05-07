@@ -42,6 +42,7 @@ router.get('/:id', function(req, res, next) {
 /* PUT /todos/:id */
 router.put('/:id', function(req, res, next) {
   console.log('PUT /:id ' + JSON.stringify(req.params))
+  console.log('PUT body ' + JSON.stringify(req.body))
   todoModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -51,6 +52,7 @@ router.put('/:id', function(req, res, next) {
 /* DELETE /todos/:id */
 router.delete('/:id', function(req, res, next) {
   console.log('DELETE /:id ' + JSON.stringify(req.params))
+  console.log('DELETE body ' + JSON.stringify(req.body))
   todoModel.findByIdAndRemove(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
