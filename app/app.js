@@ -39,3 +39,9 @@ app.get('/', function( req, res) {
 var PORT = process.env.PORT || 8000;
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);
+
+// start off the socket.io handler
+ioHttp = require('./socket.io/todo');
+ioHttp.listen(8800, function() {
+  console.log('listening for socket.io on 8800');
+});
